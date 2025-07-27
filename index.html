@@ -1,60 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amrutha Muralidhar - Academic Profile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrutha Muralidhar - AI & Software Engineer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0A192F; /* Very Dark Navy Blue */
+            color: #CCD6F6; /* Light Blue-Gray (main text) */
+            transition: background-color 0.5s ease;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #64FFDA; /* Bright Aqua (headings - vibrant accent) */
+        }
+        .container {
+            max-width: 960px;
+        }
+        .section-title {
+            border-bottom: 2px solid #233554; /* Darker Blue (subtle divider) */
+        }
+        .card {
+            background-color: #112240; /* Dark Blue (card background) */
+            border: 1px solid #233554; /* Darker Blue (card border) */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        }
+        .nav-link {
+            color: #8892B0; /* Muted Blue-Gray (nav links) */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #64FFDA; /* Bright Aqua on hover */
+            transform: translateY(-2px);
+        }
+        .nav-link.active {
+            color: #64FFDA; /* Bright Aqua (active nav link) */
+            font-weight: 600;
+            border-bottom: 2px solid #64FFDA;
+        }
+        .social-icon {
+            color: #8892B0; /* Muted Blue-Gray */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #64FFDA; /* Bright Aqua */
+            transform: scale(1.1);
+        }
+        .publication-item {
+            margin-bottom: 0.75rem;
+        }
+        .publication-item:last-child {
+            margin-bottom: 0;
+        }
+        .hidden-section {
+            display: none;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive 3-column layout */
+            gap: 1rem;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-8">
 
-  <header>
-    <h1>Amrutha Muralidhar</h1>
-    <div class="social-icons">
-      <a href="mailto:amrutham.cs21@bmsce.ac.in"><i class="far fa-envelope"></i></a>
-      <a href="https://in.linkedin.com/in/amrutha-muralidhar" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/AmruthaMuralidhar1" target="_blank"><i class="fab fa-github"></i></a>
-      <!-- Add more social media icons with their respective links -->
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-2">Amrutha Muralidhar</h1>
+            <p class="text-xl text-gray-400 mb-4">AI & Software Engineer | Building Intelligent Solutions</p>
+            <div class="flex justify-center items-center space-x-6 text-gray-300">
+                <a href="mailto:amrutha.muralidhar7@gmail.com" class="hover:text-blue-300 transition duration-300">Not gon add my email here iykyk :)</a>
+                <span>|</span>
+                <span>No number also, just contact me on linkdein</span>
+                <span>|</span>
+                <span>Bangalore, India</span>
+                <a href="https://in.linkedin.com/in/amrutha-muralidhar" target="_blank" class="social-icon text-2xl ml-4" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="mb-12 bg-gray-900 p-4 rounded-lg shadow-md flex justify-center space-x-8">
+            <a href="#about" class="nav-link text-lg px-3 py-2 rounded-md" data-section="about">About</a>
+            <a href="#experience" class="nav-link text-lg px-3 py-2 rounded-md" data-section="experience">Experience</a>
+            <a href="#projects" class="nav-link text-lg px-3 py-2 rounded-md" data-section="projects">Projects</a>
+            <a href="#research" class="nav-link text-lg px-3 py-2 rounded-md" data-section="research">Research</a>
+            <a href="#skills" class="nav-link text-lg px-3 py-2 rounded-md" data-section="skills">Skills</a>
+            <a href="#photos" class="nav-link text-lg px-3 py-2 rounded-md" data-section="photos">Photos</a>
+            <a href="#personal" class="nav-link text-lg px-3 py-2 rounded-md" data-section="personal">Personal</a>
+        </nav>
+
+        <!-- Main Content Sections (controlled by JS) -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="mb-12 card p-8 rounded-lg">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">About Me</h2>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    I'm a Computer Science Engineer with a strong focus on Artificial Intelligence, Machine Learning, and Cybersecurity. My work centers on developing robust software solutions and pushing the boundaries of what's possible with intelligent systems. I'm driven by impactful research and building tools that tackle complex challenges head-on.
+                </p>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-medium text-gray-200 mb-4">Education</h3>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium text-gray-200">Bachelor of Engineering in Computer Science and Engineering</h4>
+                        <p class="text-md text-gray-400">B. M. S College of Engineering, Bengaluru, Karnataka, India</p>
+                        <p class="text-sm text-gray-500">2021-2025 | 9.38/10 GPA</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium text-gray-200">Class-XII Senior School Certificate Examination</h4>
+                        <p class="text-md text-gray-400">Narayana e-Techno school, Central Board of Secondary Education (CBSE), Bengaluru, India</p>
+                        <p class="text-sm text-gray-500">2019-2021 | 93.2/100</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-medium text-gray-200">Class-X Secondary School Certificate Examination</h4>
+                        <p class="text-md text-gray-400">Air Force School Hebbal, Central Board of Secondary Education (CBSE), Bengaluru, India</p>
+                        <p class="text-sm text-gray-500">2009-2019 | 93.8/100</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">Experience</h2>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">Research and Development Intern</h3>
+                    <p class="text-lg text-gray-400">Hewlett Packard Enterprise [Advanced Development Unit], Bengaluru</p>
+                    <p class="text-md text-gray-500 mb-2">Feb 2025 - Present</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Engineered a robust RAG layer over Homefleet's storage system using FAISS and transformer-based embeddings, enabling semantic search across 100K+ files with sub-400ms response times.</li>
+                        <li>Developed an optimized ML pipeline for chunking, embedding, and indexing unstructured storage data using sentence-transformers, significantly improving retrieval relevance and reducing manual query resolution time by 60%.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">Software Engineering Intern</h3>
+                    <p class="text-lg text-gray-400">Siemens (Digital Transformation Solutions Unit), Bengaluru</p>
+                    <p class="text-md text-gray-500 mb-2">Jan 2024 - Nov 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Built a high-performance, cloud-native logistics management system to handle real-time vehicle routing and delivery scheduling for over 1,000 daily shipments, leveraging Spring Boot microservices, PostgreSQL, and Kubernetes for scalable orchestration.</li>
+                        <li>Designed and implemented advanced solutions for the Capacitated Vehicle Routing Problem with Time Windows, conducting comparative performance analysis of Clarke-Wright Savings, Tabu Search, and Genetic Algorithms on real delivery datasets to achieve superior route efficiency and reduced fleet travel time.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">Research Intern</h3>
+                    <p class="text-lg text-gray-400">Prof. Arpita Patra, Indian Institute of Science, Bengaluru</p>
+                    <p class="text-md text-gray-500 mb-2">Jul 2024 - Jan 2025</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Contributed to a secure multi-hospital image segmentation protocol within the Asterisk framework of dishonest majority, incorporating a semi-honest, non-colluding helper party for efficient privacy-preserving predictions.</li>
+                        <li>Achieved a remarkable 228-288x improvement in preprocessing speed and enabled scalable evaluations of circuits with $10^{6}$ gates, ensuring robust security and practical applicability in multi-hospital data settings.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">Cyber Security Intern</h3>
+                    <p class="text-lg text-gray-400">CySecK Centre of Excellence in Cybersecurity, Bengaluru</p>
+                    <p class="text-md text-gray-500 mb-2">Sep 2023 - Feb 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Developed SafeNet, an innovative multilingual threat intelligence platform, utilizing spaCy, custom NER, and regex-based pattern matching for real-time detection of phishing, impersonation, and social engineering tactics in communication data.</li>
+                        <li>Constructed a comprehensive threat entity graph using NetworkX to map intricate relationships between malicious actors, URLs, and keywords extracted from flagged messages, significantly enhancing investigative traceability and reducing incident triage time by 30%.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-medium text-gray-200">ΧΑΙ Research Intern</h3>
+                    <p class="text-lg text-gray-400">BeST, Office of the Principal Scientific Adviser to the Govt. of India</p>
+                    <p class="text-md text-gray-500 mb-2">Jun 2023 - Jul 2023</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Evaluated and refined various explanation methods (LIME, SHAP, and attention mechanisms) to identify the most interpretable approach for sentiment analysis on Hindi-English social media posts.</li>
+                        <li>Created an intuitive, interactive Python tool using Streamlit and SHAP, providing clear visualizations of how text features influence model predictions, thereby enhancing the interpretability and debuggability of NLP models.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">Key Projects</h2>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">AI-Powered Code Refactoring & Optimization Assistant</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, Transformers (Fine-tuning), AST Parsing, VS Code Extension API</p>
+                    <p class="text-md text-gray-500 mb-2">Dec 2024 - Present</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Developed an intelligent assistant leveraging fine-tuned Large Language Models to suggest and apply optimal refactoring patterns across multiple programming languages.</li>
+                        <li>Implemented static code analysis and Abstract Syntax Tree (AST) parsing to identify performance bottlenecks and potential bugs, significantly enhancing code quality and developer efficiency.</li>
+                        <li>Designed a seamless integration as a VS Code extension, providing real-time code suggestions and automated refactoring capabilities.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">MLOps Pipeline for Scalable Model Deployment & Monitoring</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, Docker, Kubernetes, FastAPI, Prometheus, Grafana, CI/CD (Jenkins/GitLab CI)</p>
+                    <p class="text-md text-gray-500 mb-2">Aug 2024 - Nov 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Engineered a robust MLOps pipeline for automated deployment, scaling, and monitoring of machine learning models in production environments.</li>
+                        <li>Utilized Docker and Kubernetes for containerization and orchestration, ensuring high availability and efficient resource utilization.</li>
+                        <li>Integrated FastAPI for high-performance model serving, with Prometheus and Grafana for real-time performance metrics and anomaly detection, crucial for maintaining model integrity.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">Real-time Cyber Threat Anomaly Detection for Enterprise Networks</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, Apache Kafka, TensorFlow/PyTorch, Unsupervised Learning, NetworkX</p>
+                    <p class="text-md text-gray-500 mb-2">Apr 2024 - Jul 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Designed and implemented a real-time anomaly detection system to identify sophisticated cyber threats within enterprise network traffic.</li>
+                        <li>Leveraged Apache Kafka for high-throughput data streaming and applied unsupervised machine learning models (e.g., Autoencoders, Isolation Forest) to detect unusual patterns indicative of intrusions.</li>
+                        <li>Visualized threat propagation paths using NetworkX, providing security analysts with actionable insights for rapid incident response.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">TESSA: Tailored Expert System for Synthesis and Translation of Code</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, TensorFlow</p>
+                    <p class="text-md text-gray-500 mb-2">Jul 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Built a cross-language code translation system using the T5 architecture with self-attention and transfer learning from GPT-3 and BERT, with multi-head attention and positional encoding for improved semantic accuracy and syntax generation.</li>
+                        <li>Integrated IDEs via WebSocket APIs and language server protocols for dynamic feedback.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-gray-200">AdVantage: GenAI Suite for Enterprise Ad Fraud Prevention</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, FAISS, Spark</p>
+                    <p class="text-md text-gray-500 mb-2">May 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Developed a high-performance GenAI suite using LLAMA 3 and FAISS for real-time vector similarity search, achieving 98% fraud detection accuracy with dense embeddings and approximate nearest neighbor search.</li>
+                        <li>Optimized data processing with Apache Spark, enabling rapid analysis of millions of ad interactions per second with low-latency responses and high throughput for fraud detection.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-medium text-gray-200">FIXR: AR Training and Gen AI for Predictive Maintenance</h3>
+                    <p class="text-lg text-gray-400 mb-2">Python, Three.js, AR/VR</p>
+                    <p class="text-md text-gray-500 mb-2">Jan 2024</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Developed an immersive AR training app using Three.js and WebGL, with 3D rendering and context-sensitive simulations for warehouse machinery.</li>
+                        <li>Built a real-time multilingual virtual assistant to provide language-specific support in 20+ languages to enhance training efficiency across diverse workforces.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Research & Publications Section -->
+            <section id="research" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">Research & Publications</h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li class="publication-item">Muralidhar, A, Aithal, A, Hebbar, S and Sooda, K. (2025). Error Patterns and Performance Gaps in Neural Models for Code Translation, Multimedia Tools and Applications, Springer [Under Review]</li>
+                    <li class="publication-item">Muralidhar, A, Aithal, A, Hebbar, S and Sooda, K. (2025). Neural Network Models for Cross-Language Code Translation, International Conference on Contemporary Computing and Communications, IEEE</li>
+                    <li class="publication-item">Muralidhar, A. (2024). Bert-Based Detection of Cyberbullying in Online Texts, Scientific and Practical Cyber Security Journal (SPCSJ), 8(2)</li>
+                    <li class="publication-item">Muralidhar, A. and Lakkanna, M. (2024). Analyzing Socio-Economic Indicators to Determine Science Engagement Trends in India, Journal of Research in Didactical Sciences, 2024, Volume 3, Issue 1</li>
+                    <li class="publication-item">Muralidhar, A, Bindroo, R, Panimohzi, K. (2024). Analysis of Real-Time Cognitive Fatigue Detection Systems for Driver Safety, ICETCS IEEE</li>
+                    <li class="publication-item">Muralidhar, A. and Lakkanna, Y. (2024). Machine Learning Models for Sentiment Analysis, 10th International Conference on Advanced Computing and Communication Systems (ICACCS) IEEE</li>
+                    <li class="publication-item">Muralidhar, A. and Lakkanna, Y. (2023). From Clicks to Conversions: Analysis of Traffic Sources in E-Commerce, 12th International Conference on Contemporary Issues in Management. Best Paper</li>
+                    <li class="publication-item">Muralidhar, A. and Lakkanna, M. (2023). Regulating Cryptocurrency and Decentralised Finance for an Inclusive Economy, International Conference on Flourishing Through Societal Change. Best Paper</li>
+                </ul>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">Programming Languages & Databases:</h3>
+                        <p>Python (Advanced), Java, C/C++, Rust, Julia, SQL, NoSQL (Cassandra, MongoDB, Redis), MERN Stack, Verilog, Matlab, Shell Scripting</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">AI/ML Frameworks & Libraries:</h3>
+                        <p>TensorFlow, PyTorch, Keras, Scikit-learn, Hugging Face Transformers, FAISS, OpenCV, NLTK, spaCy, GenAI APIs, Reinforcement Learning, Explainable AI (XAI)</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">Web Development & Backend:</h3>
+                        <p>React, Angular, Node.js, Express.js, Flask, Django, Spring Boot, FastAPI, RESTful APIs, GraphQL</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">Cloud & DevOps:</h3>
+                        <p>Kubernetes, Docker, AWS (EC2, S3, Lambda, SageMaker), GCP (Compute Engine, BigQuery, Vertex AI), Apache Kafka, Git, Jenkins, GitLab CI, Terraform</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">Data Engineering & Analytics:</h3>
+                        <p>Apache Spark, Apache Flink, Airflow, ETL Pipelines, Data Warehousing, Data Visualization (D3.js, Matplotlib, Seaborn), Statistical Analysis</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-200 mb-2">Cybersecurity & Privacy:</h3>
+                        <p>Threat Intelligence Platforms, NetworkX, Cryptography, Secure Multi-Party Computation (MPC), Differential Privacy, Vulnerability Assessment</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-medium text-gray-200 mb-4">Select Accomplishments</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li><span class="font-semibold">Top 3 out of 5600+ AI Hackathon, Ministry of Information & Broadcasting, Govt. of India</span> - May 2025</li>
+                        <li><span class="font-semibold">IASC-INSA-NASI Fellow</span> | Prestigious national fellowship awarded to 100 engineering students in India - Jun 2024</li>
+                        <li><span class="font-semibold">Grace Hopper Scholar</span> | Awarded the advancing inclusion scholarship to attend GHC 24 - Mar 2024</li>
+                        <li><span class="font-semibold">Outstanding Project Award</span> | Department of CSE, BMSCE - Mar 2024</li>
+                        <li><span class="font-semibold">Global Quantum and AI Scholar</span> | Scholarship recipient among 4000+ students from 100+ countries - Mar 2024</li>
+                        <li><span class="font-semibold">First Place Stock Prediction Model Building</span>, Phaseshift Annual International Tech Fest - Dec 2023</li>
+                        <li><span class="font-semibold">7 Merit Scholarships</span> | Awarded for Outstanding High School Performance - July 2021</li>
+                    </ul>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-medium text-gray-200 mb-4">Leadership Positions</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li><span class="font-semibold">President, Computer Science Department Club (CodeIO)</span> - Jan 2024 - Dec 2024</li>
+                        <li><span class="font-semibold">President - Technical Team, Artificial Intelligence Club (Augment.ai)</span> - Jul 2023 - Jun 2024</li>
+                        <li><span class="font-semibold">Tech Lead, Google Student Developer Club BMSCE Chapter (GDSC)</span> - Mar 2023 - Jun 2024</li>
+                        <li><span class="font-semibold">Executive Committee Member, Mathematical Society (Pentagram)</span> - Dec 2022 - Aug 2024</li>
+                        <li><span class="font-semibold">Coordinator, Literary and Debate Society (Inksanity)</span> - Dec 2022 - Jun 2023</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Photos Section -->
+            <section id="photos" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">Moments & Memories</h2>
+                <div class="photo-grid">
+                    <img src="http://googleusercontent.com/file_content/1" alt="Amrutha Muralidhar - Photo 1" onerror="this.onerror=null;this.src='https://placehold.co/300x200/112240/64FFDA?text=Your+Image+1';">
+                    <img src="https://placehold.co/300x200/112240/64FFDA?text=Your+Image+2" alt="Amrutha Muralidhar - Photo 2">
+                    <img src="https://placehold.co/300x200/112240/64FFDA?text=Your+Image+3" alt="Amrutha Muralidhar - Photo 3">
+                    <img src="https://placehold.co/300x200/112240/64FFDA?text=Your+Image+4" alt="Amrutha Muralidhar - Photo 4">
+                    <img src="https://placehold.co/300x200/112240/64FFDA?text=Your+Image+5" alt="Amrutha Muralidhar - Photo 5">
+                    <img src="https://placehold.co/300x200/112240/64FFDA?text=Your+Image+6" alt="Amrutha Muralidhar - Photo 6">
+                    <!-- Add more image tags as needed for additional rows -->
+                </div>
+                <p class="text-center text-gray-400 mt-4 text-md">Just me, chilling and exploring new places. These pics capture some cool spots I've visited!</p>
+            </section>
+
+            <!-- Personal Info Section -->
+            <section id="personal" class="mb-12 card p-8 rounded-lg hidden-section">
+                <h2 class="section-title text-3xl font-semibold pb-3 mb-6">IRL Stuff (In Real Life)</h2>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">
+                    Alright, so when I'm not coding or diving deep into AI research, I'm a huge movie and TV show buff. Seriously, I could binge-watch for days. Books? Yeah, I read 'em, but honestly, it's more of a "when the mood strikes" kind of thing. Born on July 23, 2003, at 1 PM right here in Bangalore, and I've pretty much lived my whole life in this city.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">
+                    I've also done a fair bit of exploring within India. Think road trips and adventures across Maharashtra, Andhra Pradesh, Kerala, Tamil Nadu, Karnataka (obvs), Delhi, Goa, Gujrat, Rajastan, Uttar Pradesh, Punjab, Haryana, and Pondicherry. Each trip adds a new perspective, you learn something new every time!
+                </p>
+
+                <h3 class="text-2xl font-medium text-gray-200 mb-4">My Watchlist (2025 Edition)</h3>
+                <div class="mb-4">
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Superman</li>
+                        <li>M3GAN 2.0</li>
+                        <li>M3GAN</li>
+                        <li>Bride Hard</li>
+                        <li>Conclave</li>
+                        <li>Grotesquerie</li>
+                    </ul>
+                </div>
+                <!-- You can add more years/categories here -->
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            <p>&copy; 2025 Amrutha Muralidhar. All rights reserved.</p>
+        </footer>
+
     </div>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#research">Research Experience</a>
-    <a href="#papers">Research Papers</a>
-    <a href="#contact">Contact</a>    
-  </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.nav-link');
 
-  <div id="about" class="main">
-    <h2>About Me</h2>
-    <p>I am a final-year Computer Science Engineering student passionate about Machine Learning, Human-Computer Interaction, and Privacy. In my free time, you’ll find me binge-watching the latest TV hits or enjoying classic films.</p>
-  </div>
+            // Function to show a specific section and update active nav link
+            const showSection = (sectionId) => {
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.remove('hidden-section');
+                    } else {
+                        section.classList.add('hidden-section');
+                    }
+                });
 
-  <div id="projects" class="main">
-    <h2>Projects</h2>
-    <p>Coming Soon! Thanks for visiting this page. I will be updating content here shortly. If you have any queries, feel free to ping me!</p>
-  </div>
+                navLinks.forEach(link => {
+                    if (link.dataset.section === sectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
 
-  <div id="research" class="main">
-    <h2>Experience</h2>
-    <p>Coming Soon! Thanks for visiting this page. I will be updating content here shortly. If you have any queries, feel free to ping me!</p>
-  </div>
+            // Event listeners for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor link behavior
+                    const sectionId = e.target.dataset.section;
+                    showSection(sectionId);
+                    // Update URL hash for direct linking/bookmarking
+                    history.pushState(null, '', `#${sectionId}`);
+                });
+            });
 
-  <div id="papers" class="main">
-    <h2>Research Papers</h2>
-    <p>Coming Soon! Thanks for visiting this page. I will be updating content here shortly. If you have any queries, feel free to ping me!</p>
-  </div>
-
-  <div id="contact" class="main">
-    <h2>Contact</h2>
-    <p>Coming Soon! Thanks for visiting this page. I will be updating content here shortly. If you have any queries, feel free to ping me!</p>
-  </div>
-
-  <footer>
-    <p>&copy; 2023 Amrutha Muralidhar V: 07-2024</p>
-  </footer>
-
+            // Handle initial load based on URL hash or default to 'about'
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash)) {
+                showSection(initialHash);
+            } else {
+                showSection('about'); // Default section
+                history.replaceState(null, '', '#about'); // Set initial hash
+            }
+        });
+    </script>
 </body>
 </html>
