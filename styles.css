@@ -61,3 +61,14 @@ footer {
   color: #555;
   margin-top: auto;
 }
+.two-column-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    gap: 1rem; /* Space between list items */
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove left padding */
+}
+.two-column-list li {
+    list-style-type: disc; /* Re-add bullet points to the list items */
+    padding-left: 1.5rem; /* Add some space for the bullet point */
+}
